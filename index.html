@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="HMC: Learning Heterogeneous Meta-Control for Contact-Rich Loco-Manipulation">
+  <meta property="og:title" content="HMC: Learning Heterogeneous Meta-Control for Contact-Rich Loco-Manipulation" />
+  <meta property="og:description" content="" />
+  <meta property="og:url" content="https://hmc-anonymous.github.io/" /> <!-- TODO -->
+  <!-- <meta property="og:image" content="static/images/banner.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" /> -->
+
+
+  <meta name="twitter:title" content="HMC: Learning Heterogeneous Meta-Control for Contact-Rich Loco-Manipulation">
+  <meta name="twitter:description" content="">
+  <!-- <meta name="twitter:image" content="static/images/twitter_banner.png"> -->
+  <!-- <meta name="twitter:card" content="summary_large_image"> -->
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>HMC: Learning Heterogeneous Meta-Control for Contact-Rich Loco-Manipulation</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-2 publication-title"><span class="hmc-term">HMC</span>: Learning Heterogeneous Meta-Control for Contact-Rich
+              Loco-Manipulation</h1>
+            <!-- <h1 class="title is-4 publication-title">
+              ICRA 2026 Under Review
+            </h1> -->
+
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://i-am-future.github.io/" target="_blank">Lai Wei</a><sup>*</sup>,</span>
+              <span class="author-block">
+                <a href="https://xuanbinpeng.github.io/" target="_blank">Xuanbin Peng</a><sup>*</sup>,</span>
+              <span class="author-block">
+                <a href="https://rogerqi.github.io/" target="_blank">Ri-Zhao Qiu</a>,
+              </span>
+              <span class="author-block">
+                <a href="https://tiianshu.github.io/" target="_blank">Tianshu Huang</a>,
+              </span>
+              <span class="author-block">
+                <a href="https://xuxin.ai/" target="_blank">Xuxin Cheng</a>,
+              </span>
+              <span class="author-block">
+                <a href="https://xiaolonw.github.io/" target="_blank">Xiaolong Wang</a><sup>✉</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">UC San Diego</span>
+              <span class="eql-cntrb"><small><br><sup>*</sup>Equal Contribution</small>
+                <small><sup>✉</sup>Corresponding Author
+              </span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper (TODO)</span>
+                  </a>
+                </span>
+
+                <!-- <span class="link-block">
+                  <a href="" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (TODO)</span>
+                  </a>
+                </span> -->
+
+                <span class="link-block">
+                  <a href="" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv (TODO)</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Teaser video-->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video poster="" id="tree" autoplay controls muted loop height="100%">
+          <!-- Your video here -->
+          <source src="static/videos/teaser-video-small.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
+  <!-- End teaser video -->
+
+  <!-- Paper abstract (always visible) -->
+  <section class="section hero is-light" id="abstract">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 mb-0">Abstract</h2>
+      <div class="content has-text-justified mt-4">
+        <p>
+          Learning from real-world robot demonstrations holds promise for interacting with complex real-world
+          environments. However, the complexity and variability of interaction dynamics often cause purely positional
+          controllers to struggle with contacts or varying payloads. To address this, we propose a
+          <strong>H</strong>eterogeneous <strong>M</strong>eta-<strong>C</strong>ontrol (<span class="hmc-term">HMC</span>) framework for
+          Loco-Manipulation that adaptively stitches
+          multiple control modalities: position, impedance, and hybrid force-position. We first introduce an
+          interface, <strong><span class="hmc-term">HMC</span>-Controller</strong>, for blending actions from different control profiles
+          <em>continuously in the torque space</em>. <strong><span class="hmc-term">HMC</span>-Controller</strong> facilitates both teleoperation and policy
+          deployment. Then, to learn a robust force-aware policy, we propose <strong><span class="hmc-term">HMC</span>-Policy</strong> to unify
+          different controllers into a heterogeneous architecture. We adopt a mixture-of-experts style routing to
+          learn from large-scale position-only data and fine-grained force-aware demonstrations. Experiments on a real
+          humanoid robot show over 50% relative improvement vs. baselines on challenging tasks such as compliant table
+          wiping and drawer opening, demonstrating the efficacy of <span class="hmc-term">HMC</span>.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+  <section class="section" id="hmc-controllers">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered"><span class="hmc-term">HMC</span>-Controller</h2>
+
+      <h4 class="title is-4 mt-5">Overview</h4>
+      <div class="columns is-half is-vcentered">
+        <!-- Left: Image -->
+        <div class="column is-5">
+          <figure class="image">
+            <img src="static/images/teleop-singlecolumn.png"
+              style="border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,0.15);">
+            <figcaption>
+            </figcaption>
+          </figure>
+          <p class="has-text-grey is-size-7 has-text-centered mt-2"></p>
+        </div>
+        <!-- Right: Text -->
+        <div class="column is-7">
+          <p class="has-text-justified">
+            We propose <strong><span class="hmc-term">HMC</span>-Controllers</strong>, a unified control interface that
+            seamlessly blends position, impedance, and hybrid force-position controllers in the torque space.
+            This allows for adaptive control strategies that can handle complex interactions with the environment.
+            <strong><span class="hmc-term">HMC</span>-Controllers</strong> facilitate both teleoperation and policy deployment, enabling robots to perform
+            contact-rich tasks safely and effectively.
+          </p>
+        </div>
+      </div>
+
+      <div class="columns is-vcentered mt-3">
+        <!-- Column 1 -->
+        <div class="column">
+          <div class="box" style="padding:1rem;">
+            <video autoplay muted loop playsinline controls
+              style="width:100%;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,0.15);">
+              <source src="static/videos/Controller-Pos-Demo.mp4" type="video/mp4" />
+            </video>
+            <p class="is-size-6 has-text-centered mt-3">
+              Position controller <br>
+              <i>For precise free-space tasks</i>
+            </p>
+          </div>
+        </div>
+        <!-- Column 2  -->
+        <div class="column">
+          <div class="box" style="padding:1rem;">
+            <video autoplay muted loop playsinline controls
+              style="width:100%;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,0.15);">
+              <source src="static/videos/Controller-Comp-Demo.mp4" type="video/mp4" />
+            </video>
+            <p class="is-size-6 has-text-centered mt-3">
+              Compliance controller<br>
+              <i>For forceful & contact-rich tasks</i>
+            </p>
+          </div>
+        </div>
+        <!-- Column 3 -->
+        <div class="column">
+          <div class="box" style="padding:1rem;">
+            <video autoplay muted loop playsinline controls
+              style="width:100%;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,0.15);">
+              <source src="static/videos/Controller-PosForce-Demo.mp4" type="video/mp4" />
+            </video>
+            <p class="is-size-6 has-text-centered mt-3">
+              Hybrid force-position controller<br>
+              <i>For force-aware tasks</i>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <h4 class="title is-4 mt-5">Real-world <span class="hmc-term">HMC</span> Controller Teleoperation</h4>
+
+      <!-- Outer Box -->
+      <div class="box" style="padding:0.5rem;">
+        <!-- Videos Row -->
+        <div class="columns is-vcentered">
+          <!-- Video 1 -->
+          <div class="column">
+            <video autoplay muted loop playsinline controls
+              style="width:100%;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,0.15);">
+              <source src="static/videos/NutScrew.mp4" type="video/mp4" />
+            </video>
+            <p class="is-size-6 has-text-centered">Ours: <strong><span class="hmc-term">HMC</span>-Controller</strong>, long horizon video clip</p>
+          </div>
+          <!-- Video 2 -->
+          <div class="column">
+            <video autoplay muted loop playsinline controls
+              style="width:100%;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,0.15);">
+              <source src="static/videos/NutScrew-Annotated.mp4" type="video/mp4" />
+            </video>
+            <p class="is-size-6 has-text-centered">Ours: <strong><span class="hmc-term">HMC</span>-Controller</strong>, with stiffness annotation</p>
+          </div>
+        </div>
+        <!-- Videos Row -->
+        <div class="columns is-vcentered">
+          <!-- Video 1 -->
+          <div class="column">
+            <video autoplay muted loop playsinline controls
+              style="width:100%;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,0.15);">
+              <source src="static/videos/NutScrew-Hard.mp4" type="video/mp4" />
+            </video>
+            <p class="is-size-6 has-text-centered">
+              <i>Comparison:</i> uniformly <b>high stiffness</b>, contact-rich insertion becomes jerky and unstable, often generating excessive force and failing to align properly.
+            </p>
+          </div>
+          <!-- Video 2 -->
+          <div class="column">
+            <video autoplay muted loop playsinline controls
+              style="width:100%;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,0.15);">
+              <source src="static/videos/NutScrew-Soft.mp4" type="video/mp4" />
+            </video>
+            <p class="is-size-6 has-text-centered">
+              <i>Comparison:</i> uniformly <b>low stiffness</b>, motions lose precision and cannot generate enough force to complete insertion reliably.
+            </p>
+          </div>
+        </div>
+        <!-- Description Paragraph -->
+        <p class="has-text-centered mt-2 is-size-6">
+          Task: Screw-nut insertion and tightening
+        </p>
+      </div>
+
+
+      <!-- Outer Box -->
+      <div class="box" style="padding:0.5rem;">
+        <!-- Videos Row -->
+        <div class="columns is-vcentered">
+          <!-- Video 1 -->
+          <div class="column">
+            <video autoplay muted loop playsinline controls
+              style="width:100%;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,0.15);">
+              <source src="static/videos/insertion_comp.mp4" type="video/mp4" />
+            </video>
+            <p class="is-size-6 has-text-centered">Ours: <strong><span class="hmc-term">HMC</span>-Controller</strong></p>
+          </div>
+          <!-- Video 2 -->
+          <div class="column">
+            <video autoplay muted loop playsinline controls
+              style="width:100%;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,0.15);">
+              <source src="static/videos/insertion_pos.mp4" type="video/mp4" />
+            </video>
+            <p class="is-size-6 has-text-centered"><i>Comparison:</i> Pure Position controller</p>
+          </div>
+        </div>
+        <!-- Description Paragraph -->
+        <p class="has-text-centered mt-2 is-size-6">
+          Task: Peg-in-Hole Insertion
+        </p>
+      </div>
+
+      <!-- Outer Box -->
+      <div class="box" style="padding:0.5rem;">
+        <!-- Videos Row -->
+        <div class="columns is-vcentered">
+          <!-- Video 1 -->
+          <div class="column">
+            <video autoplay muted loop playsinline controls
+              style="width:100%;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,0.15);">
+              <source src="static/videos/wipeboard_comp_small.mp4" type="video/mp4" />
+            </video>
+            <p class="is-size-6 has-text-centered">Ours: <strong><span class="hmc-term">HMC</span>-Controller</strong></p>
+          </div>
+          <!-- Video 2 -->
+          <div class="column">
+            <video autoplay muted loop playsinline controls
+              style="width:100%;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,0.15);">
+              <source src="static/videos/wipeboard_pos_small.mp4" type="video/mp4" />
+            </video>
+            <p class="is-size-6 has-text-centered"><i>Comparison:</i> Pure Position controller</p>
+          </div>
+        </div>
+        <!-- Description Paragraph -->
+        <p class="has-text-centered mt-2 is-size-6">
+          Task: Wiping Whiteboard 
+        </p>
+      </div>
+
+      <div class="columns is-vcentered mt-3">
+        <!-- Column 1 -->
+        <div class="column">
+          <div class="box" style="padding:0.5rem;">
+            <video autoplay muted loop playsinline controls
+              style="width:100%;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,0.15);">
+              <source src="static/videos/DoorOpen.mp4" type="video/mp4" />
+            </video>
+            <p class="is-size-6 has-text-centered mt-3">
+              Task: Opening the door
+            </p>
+          </div>
+        </div>
+        <!-- Column 2  -->
+        <div class="column">
+          <div class="box" style="padding:0.5rem;">
+            <video autoplay muted loop playsinline controls
+              style="width:100%;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,0.15);">
+              <source src="static/videos/PushChair.mp4" type="video/mp4" />
+            </video>
+            <p class="is-size-6 has-text-centered mt-3">
+              Task: Arranging the chair
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-vcentered mt-3">
+        <!-- Column 1 -->
+        <div class="column">
+          <div class="box" style="padding:0.5rem;">
+            <video autoplay muted loop playsinline controls
+              style="width:100%;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,0.15);">
+              <source src="static/videos/OpenMicrowave.mp4" type="video/mp4" />
+            </video>
+            <p class="is-size-6 has-text-centered mt-3">
+              Task: Opening the microwave
+            </p>
+          </div>
+        </div>
+        <!-- Column 2  -->
+        <div class="column">
+          <div class="box" style="padding:0.5rem;">
+            <video autoplay muted loop playsinline controls
+              style="width:100%;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,0.15);">
+              <source src="static/videos/HumanInteract.mp4" type="video/mp4" />
+            </video>
+            <p class="is-size-6 has-text-centered mt-3">
+              Task: Putting on cloth and back-tapping massage
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--   <section class="section" id="experiment-visualization">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Experiment Results</h2>
+    </div>
+  </section> -->
+
+  <section class="section" id="method-overview">
+    <h2 class="title is-3 has-text-centered"><span class="hmc-term">HMC</span>-Policy</h2>
+    <div class="container is-max-desktop">
+      <div class="columns is-vcentered mt-3">
+        <!-- Column 1 -->
+        <div class="column">
+          <div class="box" style="padding:0.5rem;">
+            <figure class="image" style="margin:0;">
+              <img src="static/images/HMC_pipeline_left.jpg"
+                style="width:97%;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,0.15);">
+            </figure>
+            <p class="is-size-9 mt-3">
+              Pretraining stage: We harness abundant positional demonstrations to train the shared transformer trunk and
+              position expert head, thereby embedding a strong positional prior that boosts generalization.
+            </p>
+          </div>
+        </div>
+        <!-- Column 2  -->
+        <div class="column">
+          <div class="box" style="padding:0.5rem;">
+            <figure class="image" style="margin:0;">
+              <img src="static/images/HMC_pipeline_right.jpg"
+                style="width:100%;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,0.15);">
+            </figure>
+            <p class="is-size-9 mt-3">
+              Fine-tuning Stage: All parameters are unfrozen and fine-tuned on a smaller, fine-grained multi-expert
+              dataset. A soft routing network learns to blend outputs from multiple experts, producing smooth and
+              adaptive control policies. (J.S: Joint Space. C.S: Cartesian Space.)
+            </p>
+          </div>
+        </div>
+      </div>
+      <h4 class="title is-4 mt-5">Real-world Policy Rollout</h4>
+
+      <div class="box" style="padding:0.5rem;">
+        <!-- Videos Row -->
+        <div class="columns is-vcentered">
+          <!-- Video 1 -->
+          <div class="column">
+            <video autoplay muted loop playsinline controls
+              style="width:100%;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,0.15);">
+              <source src="static/videos/OpenDrawer-ours.mp4" type="video/mp4" />
+            </video>
+            <p class="is-size-6 has-text-centered">Ours: <strong><span class="hmc-term">HMC</span>-Policy</strong></p>
+          </div>
+          <!-- Video 2 -->
+          <div class="column">
+            <video autoplay muted loop playsinline controls
+              style="width:100%;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,0.15);">
+              <source src="static/videos/OpenDrawer-purecomp.mp4" type="video/mp4" />
+            </video>
+            <p class="is-size-6 has-text-centered"><i>Representative Comparison:</i> ACT (meta) policy </p>
+          </div>
+        </div>
+        <!-- Description Paragraph -->
+        <p class="has-text-centered mt-2 is-size-6">
+          Task: Autonomous drawer opening
+        </p>
+      </div>
+
+      <div class="box" style="padding:0.5rem;">
+        <!-- Videos Row -->
+        <div class="columns is-vcentered">
+          <!-- Video 1 -->
+          <div class="column">
+            <video autoplay muted loop playsinline controls
+              style="width:100%;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,0.15);">
+              <source src="static/videos/LiftBottle.mp4" type="video/mp4" />
+            </video>
+            <p class="is-size-6 has-text-centered">Ours: <strong><span class="hmc-term">HMC</span>-Policy</strong></p>
+          </div>
+          <!-- Video 2 -->
+          <div class="column">
+            <video autoplay muted loop playsinline controls
+              style="width:100%;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,0.15);">
+              <source src="static/videos/LiftBottle-pureact.mp4" type="video/mp4" />
+            </video>
+            <p class="is-size-6 has-text-centered"><i>Representative Comparison:</i> ACT (meta) policy </p>
+          </div>
+        </div>
+        <!-- Description Paragraph -->
+        <p class="has-text-centered mt-2 is-size-6">
+          Task: Autonomous bottle lifting
+        </p>
+      </div>
+
+      <!-- <h4 class="title is-4 mt-5">Quantitative Results</h4>
+      <p>
+        The table below summarizes the quantitative results of our HMC Policy on three tasks: Wipe Table, Lift Bottle,
+        and Open Drawer.
+        Our policy outperforms baselines by a large margin in the success rates.
+      </p>
+      <figure class="image mb-5">
+        <img src="static/images/main-table.png" alt="Simulation quantitative results table"
+          style="width:40%;display:block;margin:0 auto;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,0.15);">
+      </figure>
+      <p>
+        The table of ablation study further demonstrates the effectiveness of each component in our HMC framework.
+      </p>
+      <figure class="image mb-5">
+        <img src="static/images/ablation-table.png" alt="Real-world quantitative results table"
+          style="width:70%;display:block;margin:0 auto;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,0.15);">
+      </figure> -->
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              All the videos on this website are compressed to reduce file size.
+            </p>
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the source code of this website, we just ask that you link back to this page in the
+              footer. <br> This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
