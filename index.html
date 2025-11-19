@@ -50,11 +50,14 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-2 publication-title"><span class="hmc-term">HMC</span>: Learning Heterogeneous Meta-Control for Contact-Rich
+            <h1 class="title is-2 publication-title"><span class="hmc-term">HMC</span>: Learning Heterogeneous
+              Meta-Control for Contact-Rich
               Loco-Manipulation</h1>
-            <!-- <h1 class="title is-4 publication-title">
-              ICRA 2026 Under Review
-            </h1> -->
+            <h1 class="title is-5 publication-title">
+              RSS 2025 <a href="https://wcbm-workshop.github.io/"
+                style="color: inherit; text-decoration: none; font-weight: inherit;">WCBM</a> Workshop Spotlight
+            </h1>
+
 
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
@@ -86,11 +89,11 @@
             <div class="column has-text-centered">
               <div class="publication-links">
                 <span class="link-block">
-                  <a href="" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <a href="static/files/2511.13710v1.pdf" target="_blank" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                     </span>
-                    <span>Paper (TODO)</span>
+                    <span>Paper</span>
                   </a>
                 </span>
 
@@ -104,11 +107,11 @@
                 </span> -->
 
                 <span class="link-block">
-                  <a href="" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://arxiv.org/abs/2511.13710" target="_blank" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
                     </span>
-                    <span>arXiv (TODO)</span>
+                    <span>arXiv</span>
                   </a>
                 </span>
               </div>
@@ -142,12 +145,16 @@
           Learning from real-world robot demonstrations holds promise for interacting with complex real-world
           environments. However, the complexity and variability of interaction dynamics often cause purely positional
           controllers to struggle with contacts or varying payloads. To address this, we propose a
-          <strong>H</strong>eterogeneous <strong>M</strong>eta-<strong>C</strong>ontrol (<span class="hmc-term">HMC</span>) framework for
+          <strong>H</strong>eterogeneous <strong>M</strong>eta-<strong>C</strong>ontrol (<span
+            class="hmc-term">HMC</span>) framework for
           Loco-Manipulation that adaptively stitches
           multiple control modalities: position, impedance, and hybrid force-position. We first introduce an
-          interface, <strong><span class="hmc-term">HMC</span>-Controller</strong>, for blending actions from different control profiles
-          <em>continuously in the torque space</em>. <strong><span class="hmc-term">HMC</span>-Controller</strong> facilitates both teleoperation and policy
-          deployment. Then, to learn a robust force-aware policy, we propose <strong><span class="hmc-term">HMC</span>-Policy</strong> to unify
+          interface, <strong><span class="hmc-term">HMC</span>-Controller</strong>, for blending actions from different
+          control profiles
+          <em>continuously in the torque space</em>. <strong><span class="hmc-term">HMC</span>-Controller</strong>
+          facilitates both teleoperation and policy
+          deployment. Then, to learn a robust force-aware policy, we propose <strong><span
+              class="hmc-term">HMC</span>-Policy</strong> to unify
           different controllers into a heterogeneous architecture. We adopt a mixture-of-experts style routing to
           learn from large-scale position-only data and fine-grained force-aware demonstrations. Experiments on a real
           humanoid robot show over 50% relative improvement vs. baselines on challenging tasks such as compliant table
@@ -167,7 +174,7 @@
         <!-- Left: Image -->
         <div class="column is-5">
           <figure class="image">
-            <img src="static/images/teleop-singlecolumn.png"
+            <img src="static/images/teleop-singlecolumn.jpg"
               style="border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,0.15);">
             <figcaption>
             </figcaption>
@@ -180,7 +187,8 @@
             We propose <strong><span class="hmc-term">HMC</span>-Controllers</strong>, a unified control interface that
             seamlessly blends position, impedance, and hybrid force-position controllers in the torque space.
             This allows for adaptive control strategies that can handle complex interactions with the environment.
-            <strong><span class="hmc-term">HMC</span>-Controllers</strong> facilitate both teleoperation and policy deployment, enabling robots to perform
+            <strong><span class="hmc-term">HMC</span>-Controllers</strong> facilitate both teleoperation and policy
+            deployment, enabling robots to perform
             contact-rich tasks safely and effectively.
           </p>
         </div>
@@ -240,7 +248,8 @@
               style="width:100%;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,0.15);">
               <source src="static/videos/NutScrew.mp4" type="video/mp4" />
             </video>
-            <p class="is-size-6 has-text-centered">Ours: <strong><span class="hmc-term">HMC</span>-Controller</strong>, long horizon video clip</p>
+            <p class="is-size-6 has-text-centered">Ours: <strong><span class="hmc-term">HMC</span>-Controller</strong>,
+              long horizon video clip</p>
           </div>
           <!-- Video 2 -->
           <div class="column">
@@ -248,7 +257,8 @@
               style="width:100%;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,0.15);">
               <source src="static/videos/NutScrew-Annotated.mp4" type="video/mp4" />
             </video>
-            <p class="is-size-6 has-text-centered">Ours: <strong><span class="hmc-term">HMC</span>-Controller</strong>, with stiffness annotation</p>
+            <p class="is-size-6 has-text-centered">Ours: <strong><span class="hmc-term">HMC</span>-Controller</strong>,
+              with stiffness annotation</p>
           </div>
         </div>
         <!-- Videos Row -->
@@ -260,7 +270,8 @@
               <source src="static/videos/NutScrew-Hard.mp4" type="video/mp4" />
             </video>
             <p class="is-size-6 has-text-centered">
-              <i>Comparison:</i> uniformly <b>high stiffness</b>, contact-rich insertion becomes jerky and unstable, often generating excessive force and failing to align properly.
+              <i>Comparison:</i> uniformly <b>high stiffness</b>, contact-rich insertion becomes jerky and unstable,
+              often generating excessive force and failing to align properly.
             </p>
           </div>
           <!-- Video 2 -->
@@ -270,7 +281,8 @@
               <source src="static/videos/NutScrew-Soft.mp4" type="video/mp4" />
             </video>
             <p class="is-size-6 has-text-centered">
-              <i>Comparison:</i> uniformly <b>low stiffness</b>, motions lose precision and cannot generate enough force to complete insertion reliably.
+              <i>Comparison:</i> uniformly <b>low stiffness</b>, motions lose precision and cannot generate enough force
+              to complete insertion reliably.
             </p>
           </div>
         </div>
@@ -291,7 +303,8 @@
               style="width:100%;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,0.15);">
               <source src="static/videos/insertion_comp.mp4" type="video/mp4" />
             </video>
-            <p class="is-size-6 has-text-centered">Ours: <strong><span class="hmc-term">HMC</span>-Controller</strong></p>
+            <p class="is-size-6 has-text-centered">Ours: <strong><span class="hmc-term">HMC</span>-Controller</strong>
+            </p>
           </div>
           <!-- Video 2 -->
           <div class="column">
@@ -318,7 +331,8 @@
               style="width:100%;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,0.15);">
               <source src="static/videos/wipeboard_comp_small.mp4" type="video/mp4" />
             </video>
-            <p class="is-size-6 has-text-centered">Ours: <strong><span class="hmc-term">HMC</span>-Controller</strong></p>
+            <p class="is-size-6 has-text-centered">Ours: <strong><span class="hmc-term">HMC</span>-Controller</strong>
+            </p>
           </div>
           <!-- Video 2 -->
           <div class="column">
@@ -331,7 +345,7 @@
         </div>
         <!-- Description Paragraph -->
         <p class="has-text-centered mt-2 is-size-6">
-          Task: Wiping Whiteboard 
+          Task: Wiping Whiteboard
         </p>
       </div>
 
